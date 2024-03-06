@@ -1,25 +1,18 @@
 import allure
-from allure_commons.types import Severity
-
-
-def test_no_labels():
-    pass
-
-
-def test_dynamic_labels():
-    allure.dynamic.tag("web")
-    allure.dynamic.severity(Severity.BLOCKER)
-    allure.dynamic.feature("Задачи в репозитории")
-    allure.dynamic.story("Неавторизованный пользователь не может создать задачу в репозитории")
-    allure.dynamic.link("https://github.com", name="Testing")
-    pass
-
-
-@allure.tag("web")
-@allure.severity(Severity.CRITICAL)
-@allure.label("owner", "eroshenkoam")
-@allure.feature("Задачи в репозитории")
-@allure.story("Авторизованный пользователь может создать задачу в репозитории")
-@allure.link("https://github.com", name="Testing")
-def test_decorator_labels():
-    pass
+def test_definition_in_labels():
+    allure.dynamic.manual()
+    allure.dynamic.parent_suite("gossocnill-4804")
+    allure.dynamic.severity("high")
+    allure.dynamic.suite('number #8')
+    allure.dynamic.sub_suite('#75')
+    allure.dynamic.testcase("5308")
+    allure.dynamic.title("Тестирование сценария с поиском ишью на гитхабе")
+    allure.dynamic.tag("recipients")
+    allure.dynamic.link("https://github.com")
+    allure.dynamic.description("new history inherited the part of functions from its parent history")
+    allure.dynamic.description_html("<h1>new history of recipients</h1>")
+    allure.dynamic.epic("starmain")
+    allure.dynamic.feature("one more starmain")
+    allure.dynamic.id("recipient_id = 2868" )
+    allure.dynamic.issue("#648")
+    allure.dynamic.label("owner", "obondareva")
